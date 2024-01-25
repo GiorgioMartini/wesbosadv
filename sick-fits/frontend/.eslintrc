@@ -1,0 +1,6 @@
+{
+  "extends": ["airbnb", "prettier", "wesbos"],
+  "rules": {
+    "react/jsx-props-no-spreading": "off"
+  }
+}
