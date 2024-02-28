@@ -33,7 +33,8 @@ export default function Search() {
     }
   );
 
-  const findItemsButChill = debounce(findItems, 350);
+  // const findItemsButChill = debounce(findItems, 350);
+  // console.log({ findItemsButChill });
 
   resetIdCounter();
   console.log({ data });
@@ -42,7 +43,7 @@ export default function Search() {
     useCombobox({
       items: [],
       onInputValueChange() {
-        findItemsButChill({
+        findItems({
           variables: {
             searchTerm: inputValue,
           },
