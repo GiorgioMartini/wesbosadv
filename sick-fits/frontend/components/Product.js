@@ -1,11 +1,16 @@
 import Link from 'next/link';
+import gql from 'graphql-tag';
 import ItemStyles from './styles/ItemStyles';
 import Title from './styles/Title';
 import PriceTag from './styles/PriceTag';
 import formatMoney from '../lib/formatMoney';
 import DeleteProduct from './DeleteProduct';
+import AddToCart from './AddToCart';
+import { useCart } from '../lib/cartState';
 
 export default function Product({ product }) {
+  const { openCart } = useCart();
+
   return (
     <ItemStyles>
       <img src={product?.photo?.image?.publicUrlTransformed} alt="x" />
@@ -19,12 +24,13 @@ export default function Product({ product }) {
           href={{
             pathname: '/update',
             query: {
-              id: product.id,
+              id: product?.id,
             },
           }}
         >
           Edit ✏️
         </Link>
+        <AddToCart onClick={openCart} id={product.id} />
         <DeleteProduct id={product.id}>Delete</DeleteProduct>
       </div>
     </ItemStyles>

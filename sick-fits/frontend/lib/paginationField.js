@@ -4,7 +4,7 @@ export default function paginationField() {
   return {
     keyArgs: false,
     read(existing = [], { args, cache }) {
-      console.log({ existing, args, cache });
+      // console.log({ existing, args, cache });
       const { skip, first } = args;
       const data = cache.readQuery({ query: PAGINATION_QUERY });
       const count = data?._allProductsMeta.count;
@@ -21,7 +21,7 @@ export default function paginationField() {
       }
 
       if (items.length) {
-        console.log(items.length);
+        // console.log(items.length);
         return items;
       }
       // 1st ask the read for those items

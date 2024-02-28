@@ -24,12 +24,14 @@ export default function Pagination({ page }) {
   const { count } = data._allProductsMeta;
   const pageCount = Math.ceil(count / perPage);
 
-  console.log({ page, pageCount });
+  // console.log({ page, pageCount });
 
   return (
     <PaginationStyles>
       <Head>
-        <title>Sick fits | Page {page} of ___</title>
+        <title>
+          Sick fits | Page {page} of {pageCount}
+        </title>
       </Head>
       <Link href={`/products/${parseInt(page) - 1}`}>
         <a aria-disabled={page <= 1}>Prev</a>

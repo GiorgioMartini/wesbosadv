@@ -1,6 +1,7 @@
 import { createAuth } from "@keystone-next/auth";
 import { ProductImage } from "./schemas/ProductImage";
 import { User } from "./schemas/User";
+import { CartItem } from "./schemas/CartItem";
 import { Product } from "./schemas/Product";
 import { config, createSchema } from "@keystone-next/keystone/schema";
 import "dotenv/config";
@@ -46,6 +47,7 @@ export default withAuth(
       },
     },
     lists: createSchema({
+      CartItem,
       User,
       Product,
       ProductImage,
