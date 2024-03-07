@@ -42,6 +42,8 @@ function CheckoutForm() {
       card: elements.getElement(CardElement),
     });
 
+    console.log({ paymentMethod });
+
     if (error) setError(error);
 
     setLoading(false);
@@ -50,7 +52,7 @@ function CheckoutForm() {
 
   return (
     <CheckoutFormStyles onSubmit={handleSubmit}>
-      <DisplayError error={error?.message} />
+      <DisplayError error={error} />
       <CardElement />
       <SickButton>check out now</SickButton>
     </CheckoutFormStyles>

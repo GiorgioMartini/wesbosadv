@@ -68,9 +68,6 @@ export default function Search() {
       </div>
       <DropDown {...getMenuProps()}>
         <DropDownItem>1</DropDownItem>
-        <DropDownItem>1</DropDownItem>
-        <DropDownItem>1</DropDownItem>
-        <DropDownItem>1</DropDownItem>
       </DropDown>
     </SearchStyles>
   );
